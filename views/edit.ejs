@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your chat</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        * {
+          margin: 0;
+          font-family: sans-serif;
+          font-size: large;
+          
+        }
+        .formDiv {
+          display: flex;
+          padding-top: 100px;
+          align-items: center;
+          flex-direction: column;
+          background-color: lightgreen;
+          height: 100vh;
+          margin: 0;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          padding-top: 20px;
+        }
+        input,
+        textarea,
+        button {
+          padding: 7px 15px;
+          border-radius: 5px;
+          outline: none;
+          border: none;
+          background-color: dodgerblue;
+          color: white;
+        }
+        button {
+          cursor: pointer;
+          background-color: rgb(160, 46, 99);
+          border-radius: 80px;
+          color: white;
+          font-weight: 800;
+          font-size: 18px;
+          
+        }
+        button:hover{
+          background-color: rgb(255, 0, 13);
+        }
+
+        button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          
+          button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+          }
+
+        h3 {
+          text-align: center;
+          margin: 10px 0;
+        }
+      </style>
+    
+
+</head>
+
+
+<body>
+
+   
+    
+    <div>
+        <div class="formDiv">
+          <div>
+            <h3>Edit Your Chat...</h3>
+            <p>This chat was send from <%= chat.from %> to <%= chat.to %></p>
+          </div>
+          <h3><%= chat._id %></h3>
+          <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+            <textarea name="msg" id="msg" cols="50" rows="10">
+  <%= chat.msg %> </textarea
+            >
+            <button type="submit">Edit Chat</button>
+          </form>
+        </div>
+      </div>
+    
+   
+    
+    
+
+   
+
+    
+    
+
+
+
+
+</body>
+
+</html>

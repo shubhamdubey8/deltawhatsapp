@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        *{
+            margin: 0;
+            font-weight: bold;
+            font-size: large;
+            font-family: sans-serif;
+            background-color: #00a884;
+            
+            
+        }
+        .formDiv{
+            display: flex;
+          padding-top: 100px;
+            align-items: center;
+            flex-direction: column;
+            
+            height: 100vh;
+            margin: 0;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-top: 20px;
+        }
+        input,textarea {
+         padding: 7px 15px;
+         border-radius: 5px;
+        outline: none;
+        border: none;
+        background-color: dodgerblue;
+        color: white
+    }
+
+    button{
+        cursor: pointer;
+        padding: 7px 15px;
+       border-radius: 50px;
+      outline: none;
+      border: none;
+     background-color: purple;
+     color: white;
+    }
+
+    button:hover{
+       background-color:  red;
+    }
+    
+      
+  
+  
+  
+    
+  
+    </style>
+</head>
+<body>
+    
+    <div>
+        <div class="formDiv">
+            <div><h3>Write a New Chat...</h3></div>
+            <form method="POST" action="/chats">
+                <input type="text" placeholder="Enter Your Name" name="from">
+                <textarea name="msg" id="msg" cols="50" rows="10" > write your message here </textarea>
+                <input type="text" placeholder="Add Receiver" name="to">
+                <button class="btn" type="submit">Create Chat</button>
+            </form>
+        </div>
+    </div>
+
+     
+
+
+
+</body>
+</html>
